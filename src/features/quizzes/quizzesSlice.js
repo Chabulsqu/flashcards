@@ -10,11 +10,14 @@ const quizzesSlice = createSlice({
   reducers: {
     addQuiz: (state, { payload: { id, name, topicId, cardIds } }) => {
       state[id] = { id: id, name, topicId, cardIds };
+    },
+    deleteQuiz: (state, { payload: { id }}) => {
+      delete state[id];
     }
   }
 });
 export const quizzesReducer = quizzesSlice.reducer;
-export const { addQuiz } = quizzesSlice.actions;
+export const { addQuiz, deleteQuiz } = quizzesSlice.actions;
 export const associateWithTopicThunk = ({ topicId, cardIds, name, id }) => {
   return (dispatch) => {
     dispatch(addQuiz({ topicId: topicId, cardIds: cardIds, name: name, id }));

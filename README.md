@@ -1,10 +1,10 @@
 # To Run
 
-Run `npm start` in the project root and the app will be available on port 3000.
+Run `npm start` in the project root and the app will be available on port 3000 after installing npm with `npm install`. If you want to try the build version, run `npm run build`. You can also use yarn to build and run the project like I did with `yarn start` and `yarn run build`.
 
 # State
 
-The app's state is totally normalized, with slices for topics, quizzes, and cards.
+The app's state is normalized, with slices for topics, quizzes, and cards.
 
 # Routes
 
@@ -20,6 +20,9 @@ The app's state is totally normalized, with slices for topics, quizzes, and card
 1. Create topics
 2. Create quizzes
 3. Visit the page for an individual quiz and flip the cards over
+4. Delete Topics and/or quizzes
+5. Close the tab and re-open it again to try LocalStorage saving
+
 
 # Questions
 

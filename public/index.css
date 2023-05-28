@@ -221,3 +221,17 @@ li:not(:last-child) {
   width: 100%;
   font-size: 2rem;
 }
+
+.delete-topic, .delete-quiz {
+  position: absolute;
+  aspect-ratio: 1;
+  filter: invert(29%) sepia(75%) saturate(4199%) hue-rotate(265deg) brightness(104%) contrast(104%);;
+}
+.delete-topic {
+  width: max(1.5vw, 22.5px);
+  top: max(15vh, 150px); left: max(80vw, 200px)
+}
+.delete-quiz {
+  width: max(1vw, 15px);
+  top: max(15vh, 150px); left: max(4vw, 80px); 
+}

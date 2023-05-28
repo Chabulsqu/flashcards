@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
-import { selectTopics } from "./topicsSlice";
+import { Link, useHistory } from "react-router-dom";
+import { selectTopics, deleteTopic } from "./topicsSlice";
 import ROUTES from "../../app/routes";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import removeIcon from '../../data/icons/trash.svg'
 
 export default function Topics() {
   const topics = useSelector(selectTopics);
+  const dispatch = useDispatch();
+  const history = useHistory()
 
   return (
     <section className="center">
@@ -22,9 +25,12 @@ export default function Topics() {
                   </div>
                 </div>
               </Link>
+              <img src={removeIcon}  alt="Delete this topic" className="delete-topic" onClick={() =>  
+                      dispatch(deleteTopic({id: topic.id}))}/>
             </li>
           ))}
       </ul>
+
       <Link
         to={ROUTES.newTopicRoute()}
         className="button create-new-topic-button"

@@ -6,11 +6,10 @@ import { selectQuizzes } from "../quizzes/quizzesSlice";
 
 
 export default function Topic() {
-  const topics = useSelector(selectTopics); // replace this with a call to your selector to select all the topics in state
-  const quizzes = useSelector(selectQuizzes); // replace this with a call to your selector to select all the quizzes in state
+  const topics = useSelector(selectTopics); 
+  const quizzes = useSelector(selectQuizzes); 
   let { topicId } = useParams();
   const topic = topics[topicId];
-  console.log(topic);
   const quizzesForTopic = topic.quizIds.map((quizId) => quizzes[quizId]);
 
   return (

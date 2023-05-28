@@ -66,8 +66,10 @@ export default function NewQuizForm() {
           id="quiz-topic"
           onChange={(e) => setTopicId(e.currentTarget.value)}
           placeholder="Topic"
+          defaultValue=""
+          required
         >
-          <option value="">Topic</option>
+          <option value="" disabled>Topic</option>
           {Object.values(topics).map((topic) => (
             <option key={topic.id} value={topic.id}>
               {topic.name}
